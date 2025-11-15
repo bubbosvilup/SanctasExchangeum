@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <title>SANCTAS EXCHANGEUM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="snow"></div>
+    <audio
+      id="bg-hum"
+      class="fx-audio"
+      src="assets/computerHum.wav"
+      loop
+      preload="auto"
+    ></audio>
+    <audio
+      id="click-one"
+      class="fx-audio"
+      src="assets/missionBtnClick1.mp3"
+      preload="auto"
+    ></audio>
+    <audio
+      id="click-two"
+      class="fx-audio"
+      src="assets/missionBtnClick2.mp3"
+      preload="auto"
+    ></audio>
+
+    <main class="main-stack">
+      <div class="container">
+        <div class="pre-result">
+          <div class="badge">
+            <span class="badge-dot"></span>
+            <span>Dati Missione</span>
+          </div>
+
+          <h1>SANCTAS EXCHANGEUM</h1>
+          <div class="year-tag">
+            Conclave Fraterno &middot; Anno Domini M3.025
+          </div>
+
+          <p class="subtitle">
+            A ogni Fratello del Capitolo verr&agrave; assegnato un Dovere di
+            Scambio Sacro.
+          </p>
+
+          <div class="divider"></div>
+
+          <div id="selection-area">
+            <label for="participant-select" id="identi"
+              >Identificati, fratello.</label
+            >
+            <select id="participant-select">
+              <option value="">Seleziona il tuo genoma</option>
+              <option value="Niccol&ograve; B">Niccol&ograve; B</option>
+              <option value="Niccol&ograve; A">Niccol&ograve; A</option>
+              <option value="Paolo C">Paolo C</option>
+              <option value="Valerio C">Valerio C</option>
+              <option value="Lorenzo C">Lorenzo C</option>
+              <option value="Alberto B">Alberto B</option>
+            </select>
+
+            <div class="actions">
+              <button class="btn-primary" id="reveal-btn">
+                Ricevi la Missione
+              </button>
+              <div class="hint">
+                <strong
+                  >&#9888;&#65039; ALLERTA: Dopo l'acquisizione della missione,
+                  l'accesso a questo Cogitatore sar&agrave; CENSURATO.
+                  &#9888;&#65039;</strong
+                >
+              </div>
+            </div>
+            <div id="confirm-message" class="confirm-message"></div>
+            <div id="error" class="error"></div>
+          </div>
+        </div>
+
+        <div id="result-card" class="result-card">
+          <div class="result-inner">
+            <div class="result-title">
+              &#10036; Benedizione del Natale Sigillata &#10036;
+            </div>
+            <div class="your-name" id="your-name"></div>
+            <div class="receiver">
+              Il tuo Fratello Designato &egrave;<br />
+              <span id="receiver-name"></span>
+            </div>
+            <div id="receiver-photo-wrapper" class="receiver-photo">
+              <div class="receiver-photo-frame">
+                <img
+                  id="receiver-photo"
+                  alt="Ritratto del Fratello Designato"
+                  decoding="async"
+                />
+              </div>
+              <p
+                id="receiver-photo-placeholder"
+                class="receiver-photo-placeholder"
+              >
+                Il ritratto cogitato apparir&agrave; qui (480&times;640px,
+                formato .webp).
+              </p>
+            </div>
+            <p class="warning">
+              &#9888;&#65039; Non violare la Segretezza. L'OCULUS IMPERIALIS
+              &egrave; puntato su di te. &#9888;&#65039;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <footer class="litany-footer">
+        <div class="litany-inner">
+          <div class="litany-title">Litanie dell'Imperatore</div>
+          <p id="litany-text" class="litany-text">
+            Avvio trasmissione liturgica...
+          </p>
+        </div>
+      </footer>
+    </main>
+
+    <!-- PANNELLO ADMIN NASCOSTO -->
+    <div id="admin-panel" class="admin-panel">
+      <div class="admin-panel-header">
+        <h2>&#10016; Console Inquisitoriale &#10016;</h2>
+        <button id="close-admin" class="btn-close">Sigilla Console</button>
+      </div>
+
+      <h3>Archivio Completo delle Missioni</h3>
+      <table id="admin-table"></table>
+
+      <hr class="admin-divider" />
+
+      <div class="admin-actions">
+        <button id="admin-clear" class="btn-purify">
+          &#9888;&#65039; Purifica Questo Terminale &#9888;&#65039;
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <!--<button class="forTheEmperorBtn">Clicca qui, eretico.</button>-->
+  </body>
+</html>
