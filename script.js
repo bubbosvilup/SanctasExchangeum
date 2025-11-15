@@ -26,7 +26,6 @@ const STORAGE_NAME = "ss2025_name";
 const STORAGE_RECEIVER = "ss2025_receiver";
 
 // Codice segreto admin
-// Per aprire admin: SHIFT + CTRL + A
 const ADMIN_KEY = "Emperor";
 const QUOTES_ENDPOINT = "assets/quotes.json";
 const QUOTES_ROTATION_MS = 6500;
@@ -65,6 +64,7 @@ const adminPanel = document.getElementById("admin-panel");
 const adminTable = document.getElementById("admin-table");
 const closeAdmin = document.getElementById("close-admin");
 const adminClearBtn = document.getElementById("admin-clear");
+const adminTriggerBtn = document.getElementById("admin-trigger");
 const bgHumEl = document.getElementById("bg-hum");
 const clickOneEl = document.getElementById("click-one");
 const clickTwoEl = document.getElementById("click-two");
@@ -448,17 +448,19 @@ revealBtn.addEventListener("click", () => {
 // PANNELLO ADMIN SEGRETO
 // ===============================
 
-// Apertura con SHIFT + CTRL + A
-document.addEventListener("keydown", (e) => {
-  if (e.shiftKey && e.ctrlKey && e.code === "KeyA") {
-    const pass = prompt("Inserisci il Codice dell'Inquisitore:");
-    if (pass === ADMIN_KEY) {
-      openAdminPanel();
-    } else {
-      alert("\u26a0\uFE0F Accesso Negato. L'Inquisizione ti osserva, eretico.");
-    }
+// Apertura tramite pulsante dedicato
+if (adminTriggerBtn) {
+  adminTriggerBtn.addEventListener("click", promptAdminAccess);
+}
+
+function promptAdminAccess() {
+  const pass = prompt("Inserisci il Codice dell'Inquisitore:");
+  if (pass === ADMIN_KEY) {
+    openAdminPanel();
+  } else if (pass !== null) {
+    alert("⚠️ Accesso Negato. L'Inquisizione ti osserva, eretico.");
   }
-});
+}
 
 function openAdminPanel() {
   adminPanel.style.display = "block";

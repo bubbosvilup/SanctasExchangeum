@@ -571,6 +571,30 @@ button:active {
   margin-bottom: 0;
 }
 
+.admin-trigger {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 15;
+  border: 1px solid var(--accent-soft);
+  background: rgba(0, 20, 8, 0.9);
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.68rem;
+  padding: 8px 12px;
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(0, 255, 102, 0.35);
+}
+
+.admin-trigger:hover {
+  box-shadow: 0 0 18px rgba(0, 255, 102, 0.6);
+}
+
+.admin-trigger:active {
+  transform: translateY(1px);
+}
+
 .litany-footer {
   margin: 0 auto;
   width: 100%;
