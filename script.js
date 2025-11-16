@@ -26,7 +26,7 @@ const STORAGE_NAME = "ss2025_name";
 const STORAGE_RECEIVER = "ss2025_receiver";
 
 // Codice segreto admin
-const ADMIN_KEY = "Emperor";
+const ADMIN_KEY = "Emperor!";
 const QUOTES_ENDPOINT = "assets/quotes.json";
 const QUOTES_ROTATION_MS = 6500;
 const PHOTO_BASE_PATH = "assets/portraits/";
@@ -454,11 +454,11 @@ if (adminTriggerBtn) {
 }
 
 function promptAdminAccess() {
-  const pass = prompt("Inserisci il Codice dell'Inquisitore:");
+  const pass = prompt("Inserisci il Codice dell'Inquisitore Nicco:");
   if (pass === ADMIN_KEY) {
     openAdminPanel();
   } else if (pass !== null) {
-    alert("⚠️ Accesso Negato. L'Inquisizione ti osserva, eretico.");
+    alert("⚠️ Accesso Negato. Invio report all'Admin in corso...");
   }
 }
 
